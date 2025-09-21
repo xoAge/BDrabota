@@ -1,0 +1,108 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Добавление нового сотрудника";
+}
+
+@using (Html.BeginForm("Create", "Employee", FormMethod.Post))
+{
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-dark">Добавление нового сотрудника</h2>
+            <hr />
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.LastName, htmlAttributes: new { @class = "p-0" })
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.FirstName, htmlAttributes: new { @class = "p-0" })
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.MiddleName, htmlAttributes: new { @class = "p-0" })
+                    @Html.TextBoxFor(m => m.MiddleName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.MiddleName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.Email, htmlAttributes: new { @class = "p-0" })
+                    @Html.TextBoxFor(m => m.Email, new { 
+                        @class = "form-control" + (ViewData.ModelState["Email"]?.Errors?.Count > 0 ? " is-invalid" : ""), 
+                        type = "email" 
+                    })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.Phone, htmlAttributes: new { @class = "p-0" })
+                    @Html.TextBoxFor(m => m.Phone, new { 
+                        @class = "form-control" + (ViewData.ModelState["Phone"]?.Errors?.Count > 0 ? " is-invalid" : ""), 
+                        type = "tel" 
+                    })
+                    @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.EmployeeType, htmlAttributes: new { @class = "p-0" })
+                    @Html.DropDownListFor(m => m.EmployeeType,
+                        ViewBag.EmployeeTypes as IEnumerable<SelectListItem>,
+                        "Выберите должность",
+                        new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.EmployeeType, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.BirthDate, htmlAttributes: new { @class = "p-0" })
+                    @Html.TextBoxFor(m => m.BirthDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                    @Html.ValidationMessageFor(m => m.BirthDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.WorkExperience, htmlAttributes: new { @class = "p-0" })
+                    @Html.TextBoxFor(m => m.WorkExperience, new { @class = "form-control", type = "number" })
+                    @Html.ValidationMessageFor(m => m.WorkExperience, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 row p-1">
+            @Html.LabelFor(m => m.Bio, htmlAttributes: new { @class = "p-0" })
+            @Html.TextAreaFor(m => m.Bio, new { @class = "form-control", rows = "3" })
+            @Html.ValidationMessageFor(m => m.Bio, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <a href="@Url.Action("Index", "Employee")" class="btn btn-secondary form-control">Назад</a>
+            </div>
+            <div class="col-3">
+                <button type="submit" class="btn btn-success form-control">Создать</button>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,58 @@
+﻿@model Gene
+
+@{
+    ViewData["Title"] = "Добавление нового гена";
+}
+
+@using (Html.BeginForm("Create", "Gene", FormMethod.Post))
+{
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-dark">Добавление нового гена</h2>
+            <hr />
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.Name, htmlAttributes: new { @class = "p-0" })
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.Function, htmlAttributes: new { @class = "p-0" })
+                    @Html.TextAreaFor(m => m.Function, new { @class = "form-control", rows = "3" })
+                    @Html.ValidationMessageFor(m => m.Function, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.RelatedDiseases, htmlAttributes: new { @class = "p-0" })
+                    @Html.TextAreaFor(m => m.RelatedDiseases, new { @class = "form-control", rows = "5" })
+                    @Html.ValidationMessageFor(m => m.RelatedDiseases, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <a href="@Url.Action("Index", "Gene")" class="btn btn-secondary form-control">Назад</a>
+            </div>
+            <div class="col-3">
+                <button type="submit" class="btn btn-success form-control">Создать</button>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

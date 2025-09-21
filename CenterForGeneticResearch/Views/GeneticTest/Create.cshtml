@@ -1,0 +1,84 @@
+﻿@model GeneticTest
+
+@{
+    ViewData["Title"] = "Создание нового теста";
+}
+
+<div class="container">
+    <div class="row pt-3 pb-2">
+        <div class="col-6">
+            <h2 class="text-dark">
+                @ViewData["Title"]
+            </h2>
+        </div>
+    </div>
+
+    @using (Html.BeginForm("Create", null, FormMethod.Post, new { @class = "bg-white p-4 rounded-3 shadow-sm" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.TestName, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.TestName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TestName, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group mt-3">
+                    @Html.LabelFor(model => model.AnalysisMethod, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.AnalysisMethod, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AnalysisMethod, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SampleId, htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(model => model.SampleId, ViewBag.GeneticSamples as SelectList, "-- Выберите образец --", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SampleId, "", new { @class = "text-danger" })
+                    <div id="sampleInfo" class="mt-2 p-2 bg-light rounded" style="display:none;"></div>
+                </div>
+
+                <div class="form-group mt-3">
+                    @Html.LabelFor(model => model.EmployeeId, htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(model => model.EmployeeId, ViewBag.Employees as SelectList, "-- Выберите сотрудника --", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+                    <div id="employeeInfo" class="mt-2 p-2 bg-light rounded" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="control-label">Связанные гены</label>
+            @Html.ListBox("SelectedGenes", ViewBag.Genes as MultiSelectList, new { @class = "form-control", size = "6"  })
+        </div>
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Result, htmlAttributes: new { @class = "control-label" })
+            @Html.TextAreaFor(model => model.Result, new { @class = "form-control", rows = "3" })
+            @Html.ValidationMessageFor(model => model.Result, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Interpretation, htmlAttributes: new { @class = "control-label" })
+            @Html.TextAreaFor(model => model.Interpretation, new { @class = "form-control", rows = "3" })
+            @Html.ValidationMessageFor(model => model.Interpretation, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+            <a asp-action="Index" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Назад к списку
+            </a>
+            <button type="submit" class="btn btn-success">
+                <i class="bi bi-check-circle"></i> Создать тест
+            </button>
+        </div>
+    }
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

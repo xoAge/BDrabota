@@ -1,0 +1,64 @@
+﻿@model CenterForGeneticResearch.Models.Entities.Conclusion
+
+@{
+    ViewData["Title"] = "Редактирование заключения";
+}
+
+<div class="container">
+    <div class="row pt-3 pb-2">
+        <div class="col-6">
+            <h2 class="text-dark">
+                @ViewData["Title"]
+            </h2>
+        </div>
+    </div>
+
+    @using (Html.BeginForm("Update", "Conclusion", FormMethod.Post, new { @class = "bg-white p-4 rounded-3 shadow-sm" }))
+    {
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.TestId)
+        
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        
+        <div class="form-group mb-4">
+            <label class="control-label mb-2">Информация о тесте</label>
+            <div class="card bg-light p-3">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-clipboard-data fs-4 me-3 text-primary"></i>
+                    <span class="fw-bold">@ViewBag.TestInfo</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.ConclusionDate, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.ConclusionDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+            @Html.ValidationMessageFor(model => model.ConclusionDate, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Summary, new { @class = "control-label" })
+            @Html.TextAreaFor(model => model.Summary, new { @class = "form-control", rows = 5 })
+            @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Recommendations, new { @class = "control-label" })
+            @Html.TextAreaFor(model => model.Recommendations, new { @class = "form-control", rows = 5 })
+            @Html.ValidationMessageFor(model => model.Recommendations, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+            <a asp-action="Index" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Назад к списку
+            </a>
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save"></i> Сохранить изменения
+            </button>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

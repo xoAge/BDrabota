@@ -1,0 +1,86 @@
+﻿@model GeneticSample
+
+@{
+    ViewData["Title"] = "Редактирование образца";
+}
+
+@using (Html.BeginForm("Update", "GeneticSample", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.Id)
+
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-dark">@ViewData["Title"]</h2>
+            <hr />
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.PatientId, "Владелец (пациент)", htmlAttributes: new { @class = "p-0" })
+                    @Html.DropDownListFor(m => m.PatientId, 
+                        ViewBag.Patients as SelectList,
+                        "Выберите пациента",
+                        new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.PatientId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.SampleType, htmlAttributes: new { @class = "p-0" })
+                    @Html.DropDownListFor(m => m.SampleType,
+                        ViewBag.SampleTypes as SelectList,
+                        "Выберите тип образца",
+                        new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.SampleType, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.CollectionDate, htmlAttributes: new { @class = "p-0" })
+                    @Html.TextBoxFor(m => m.CollectionDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                    @Html.ValidationMessageFor(m => m.CollectionDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.Status, htmlAttributes: new { @class = "p-0" })
+                    @Html.DropDownListFor(m => m.Status,
+                        ViewBag.Statuses as SelectList,
+                        "Выберите статус",
+                        new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Status, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3 row p-1">
+                    @Html.LabelFor(m => m.TemperatureRegime, htmlAttributes: new { @class = "p-0" })
+                    @Html.TextBoxFor(m => m.TemperatureRegime, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.TemperatureRegime, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 row p-1">
+            @Html.LabelFor(m => m.StorageLocation, htmlAttributes: new { @class = "p-0" })
+            @Html.TextBoxFor(m => m.StorageLocation, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.StorageLocation, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <a href="@Url.Action("Index", "GeneticSample")" class="btn btn-secondary form-control">Назад</a>
+            </div>
+            <div class="col-3">
+                <button type="submit" class="btn btn-success form-control">Сохранить</button>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

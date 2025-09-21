@@ -1,0 +1,115 @@
+﻿@model GeneticTestDetailsVM
+
+@{
+    ViewData["Title"] = "Детали генетического теста";
+}
+
+<div class="container">
+    <div class="row pt-3 pb-4">
+        <div class="col-6">
+            <h2 class="text-dark">
+                <i class="bi bi-clipboard2-pulse"></i> Детали генетического теста
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-action="Index" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Назад к списку
+            </a>
+        </div>
+    </div>
+
+    <div class="bg-white p-4 rounded-3 shadow-sm mb-4">
+        <h4 class="border-bottom pb-2 mb-3">
+            <i class="bi bi-info-circle"></i> Основная информация
+        </h4>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="text-muted small">Название теста</label>
+                <div class="fs-5">@Model.Test.TestName</div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="text-muted small">Дата проведения</label>
+                <div class="fs-5">@Model.Test.ConductDate.ToString("d")</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="text-muted small">Метод анализа</label>
+                <div class="fs-5">@Model.Test.AnalysisMethod</div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="text-muted small">Ответственный сотрудник</label>
+                <div class="fs-5">@Model.EmployeeInfo</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white p-4 rounded-3 shadow-sm mb-4">
+        <h4 class="border-bottom pb-2 mb-3">
+            <i class="bi bi-person"></i> Данные пациента
+        </h4>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="text-muted small">Пациент</label>
+                <div class="fs-5">@Model.PatientFullName</div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="text-muted small">Образец</label>
+                <div class="fs-5">@Model.SampleInfo</div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="text-muted small">Исследуемые гены</label>
+            <div class="fs-5">@(Model.GeneNames.Any() ? string.Join(", ", Model.GeneNames) : "Не указаны")</div>
+        </div>
+    </div>
+
+    <div class="bg-white p-4 rounded-3 shadow-sm mb-4">
+        <h4 class="border-bottom pb-2 mb-3">
+            <i class="bi bi-file-text"></i> Результаты теста
+        </h4>
+
+        <div class="mb-3">
+            <label class="text-muted small">Результат</label>
+            <div class="fs-5">@(Model.Test.Result ?? "Результат не указан")</div>
+        </div>
+
+        <div class="mb-3">
+            <label class="text-muted small">Интерпретация</label>
+            <div class="fs-5">@(Model.Test.Interpretation ?? "Интерпретация не указана")</div>
+        </div>
+    </div>
+
+    @if (Model.Conclusion != null)
+    {
+        <div class="bg-white p-4 rounded-3 shadow-sm mb-4">
+            <h4 class="border-bottom pb-2 mb-3">
+                <i class="bi bi-file-earmark-medical"></i> Заключение
+            </h4>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="text-muted small">Дата заключения</label>
+                    <div class="fs-5">@Model.Conclusion.ConclusionDate.ToString("d")</div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="text-muted small">Резюме</label>
+                <div class="fs-5">@Model.Conclusion.Summary</div>
+            </div>
+
+            <div class="mb-3">
+                <label class="text-muted small">Рекомендации</label>
+                <div class="fs-5">@Model.Conclusion.Recommendations</div>
+            </div>
+        </div>
+    }
+</div>

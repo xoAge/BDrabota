@@ -1,0 +1,137 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CenterForGeneticResearch
+build_property.RootNamespace = CenterForGeneticResearch
+build_property.ProjectDir = C:\Users\pazno\Desktop\CenterForGeneticResearch\CenterForGeneticResearch\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\pazno\Desktop\CenterForGeneticResearch\CenterForGeneticResearch
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Conclusion/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uY2x1c2lvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Conclusion/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uY2x1c2lvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Conclusion/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uY2x1c2lvblxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Employee/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Employee/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Employee/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/GeneticSample/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXRpY1NhbXBsZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/GeneticSample/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXRpY1NhbXBsZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/GeneticSample/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXRpY1NhbXBsZVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/GeneticTest/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXRpY1Rlc3RcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/GeneticTest/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXRpY1Rlc3RcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/GeneticTest/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXRpY1Rlc3RcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/GeneticTest/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXRpY1Rlc3RcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Gene/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Gene/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Gene/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Home/UserIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2VySW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Patient/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Patient/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Patient/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Shared/_Layout_User.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pazno/Desktop/CenterForGeneticResearch/CenterForGeneticResearch/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-50szll3iwk

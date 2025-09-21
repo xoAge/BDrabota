@@ -1,0 +1,93 @@
+﻿@model GeneticSampleFilterVM
+
+@{
+    ViewData["Title"] = "Генетические образцы";
+}
+
+<div class="container">
+    <div class="row pt-3 pb-2">
+        <div class="col-6">
+            <h2 class="text-dark">
+                Генетические образцы
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="GeneticSample" asp-action="Create" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> Добавить образец
+            </a>
+        </div>
+    </div>
+
+    <form method="get" asp-action="Index" class="mb-4">
+        <div class="row">
+            <div class="col-md-4 mb-2">
+                <input type="text" name="ownerNameFilter" value="@Model.OwnerNameFilter"
+                       class="form-control" placeholder="Поиск по владельцу (ФИО)" />
+            </div>
+            <div class="col-md-3 mb-2">
+                <select name="sampleTypeFilter" class="form-select">
+                    <option value="">Все типы</option>
+                    <option value="Blood" selected="@(Model.SampleTypeFilter == "Blood")">Кровь</option>
+                    <option value="Saliva" selected="@(Model.SampleTypeFilter == "Saliva")">Слюна</option>
+                    <option value="Hair" selected="@(Model.SampleTypeFilter == "Hair")">Волосы</option>
+                    <option value="Biopsy" selected="@(Model.SampleTypeFilter == "Biopsy")">Биопсия</option>
+                    <option value="Urine" selected="@(Model.SampleTypeFilter == "Urine")">Моча</option>
+                    <option value="Other" selected="@(Model.SampleTypeFilter == "Other")">Другое</option>
+                </select>
+            </div>
+            <div class="col-md-3 mb-2">
+                <select name="statusFilter" class="form-select">
+                    <option value="">Все статусы</option>
+                    <option value="Registered" selected="@(Model.StatusFilter == "Registered")">Зарегистрирован</option>
+                    <option value="InProcessing" selected="@(Model.StatusFilter == "InProcessing")">В обработке</option>
+                    <option value="ReadyForAnalysis" selected="@(Model.StatusFilter == "ReadyForAnalysis")">Готов к анализу</option>
+                    <option value="InAnalysis" selected="@(Model.StatusFilter == "InAnalysis")">В анализе</option>
+                    <option value="AnalysisComplete" selected="@(Model.StatusFilter == "AnalysisComplete")">Анализ завершен</option>
+                    <option value="Archived" selected="@(Model.StatusFilter == "Archived")">Архивирован</option>
+                    <option value="Spoiled" selected="@(Model.StatusFilter == "Spoiled")">Испорчен</option>
+                    <option value="Destroyed" selected="@(Model.StatusFilter == "Destroyed")">Уничтожен</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-2">
+                <button type="submit" class="btn btn-dark w-100">
+                    <i class="bi bi-search"></i> Найти
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <table class="table table-hover table-bordered text-center align-middle">
+        <thead class="table-dark">
+        <tr>
+            <th>Владелец</th>
+            <th>Тип образца</th>
+            <th>Дата сбора</th>
+            <th>Место хранения</th>
+            <th>Статус</th>
+            <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var sample in Model.GeneticSamples)
+        {
+            <tr>
+                <td>@sample.Patient?.LastName @sample.Patient?.FirstName @sample.Patient?.MiddleName</td>
+                <td>@sample.SampleType.GetDisplayName()</td>
+                <td>@sample.CollectionDate.ToString("d")</td>
+                <td>@sample.StorageLocation (@sample.TemperatureRegime)</td>
+                <td>@sample.Status.GetDisplayName()</td>
+                <td>
+                    <div class="btn-group gap-2" role="group">
+                        <a asp-controller="GeneticSample" asp-action="Update" asp-route-id="@sample.Id" class="btn btn-warning">
+                            <i class="bi bi-pencil"></i> Изменить
+                        </a>
+                        <a onclick="Delete('@Url.Action("delete", "GeneticSample", new { id = sample.Id })')" class="btn btn-danger">
+                            <i class="bi bi-trash"></i>Удалить
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

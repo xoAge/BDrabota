@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\pazno\\Desktop\\CenterForGeneticResearch\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7A997A56-27AE-4308-81B0-84F4B142449E}|CenterForGeneticResearch\\CenterForGeneticResearch.csproj|c:\\users\\pazno\\desktop\\centerforgeneticresearch\\centerforgeneticresearch\\data\\sqlscripts\\getemployeeefficiencyindex.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{7A997A56-27AE-4308-81B0-84F4B142449E}|CenterForGeneticResearch\\CenterForGeneticResearch.csproj|solutionrelative:centerforgeneticresearch\\data\\sqlscripts\\getemployeeefficiencyindex.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A997A56-27AE-4308-81B0-84F4B142449E}|CenterForGeneticResearch\\CenterForGeneticResearch.csproj|c:\\users\\pazno\\desktop\\centerforgeneticresearch\\centerforgeneticresearch\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7A997A56-27AE-4308-81B0-84F4B142449E}|CenterForGeneticResearch\\CenterForGeneticResearch.csproj|solutionrelative:centerforgeneticresearch\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A997A56-27AE-4308-81B0-84F4B142449E}|CenterForGeneticResearch\\CenterForGeneticResearch.csproj|c:\\users\\pazno\\desktop\\centerforgeneticresearch\\centerforgeneticresearch\\data\\sqlscripts\\getemployeeefficiencyindex.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{7A997A56-27AE-4308-81B0-84F4B142449E}|CenterForGeneticResearch\\CenterForGeneticResearch.csproj|solutionrelative:centerforgeneticresearch\\data\\sqlscripts\\getemployeeefficiencyindex.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GetEmployeeEfficiencyIndex.sql ",
+              "DocumentMoniker": "C:\\Users\\pazno\\Desktop\\CenterForGeneticResearch\\CenterForGeneticResearch\\Data\\SqlScripts\\GetEmployeeEfficiencyIndex.sql",
+              "RelativeDocumentMoniker": "CenterForGeneticResearch\\Data\\SqlScripts\\GetEmployeeEfficiencyIndex.sql",
+              "ToolTip": "C:\\Users\\pazno\\Desktop\\CenterForGeneticResearch\\CenterForGeneticResearch\\Data\\SqlScripts\\GetEmployeeEfficiencyIndex.sql",
+              "RelativeToolTip": "CenterForGeneticResearch\\Data\\SqlScripts\\GetEmployeeEfficiencyIndex.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-09-21T17:48:45.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\pazno\\Desktop\\CenterForGeneticResearch\\CenterForGeneticResearch\\appsettings.json",
+              "RelativeDocumentMoniker": "CenterForGeneticResearch\\appsettings.json",
+              "ToolTip": "C:\\Users\\pazno\\Desktop\\CenterForGeneticResearch\\CenterForGeneticResearch\\appsettings.json",
+              "RelativeToolTip": "CenterForGeneticResearch\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-21T17:47:11.755Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+﻿@model GeneticTestUpdateVM
+
+@{
+    ViewData["Title"] = "Редактирование генетического теста";
+}
+
+<div class="container">
+    <div class="row pt-3 pb-2">
+        <div class="col-6">
+            <h2 class="text-dark">
+                @ViewData["Title"]
+            </h2>
+        </div>
+    </div>
+
+    @using (Html.BeginForm("Update", "GeneticTest", FormMethod.Post, new { @class = "bg-white p-4 rounded-3 shadow-sm" }))
+    {
+        @Html.HiddenFor(model => model.Test.Id)
+        
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Test.TestName, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Test.TestName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Test.TestName, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group mt-3">
+                    @Html.LabelFor(model => model.Test.AnalysisMethod, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Test.AnalysisMethod, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Test.AnalysisMethod, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Test.SampleId, new { @class = "control-label" })
+                    @Html.DropDownListFor(model => model.Test.SampleId, ViewBag.GeneticSamples as SelectList, "-- Выберите образец --", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Test.SampleId, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group mt-3">
+                    @Html.LabelFor(model => model.Test.EmployeeId, new { @class = "control-label" })
+                    @Html.DropDownListFor(model => model.Test.EmployeeId, ViewBag.Employees as SelectList, "-- Выберите сотрудника --", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Test.EmployeeId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            @Html.Label("Связанные гены")
+            @Html.ListBoxFor(model => model.SelectedGenes, ViewBag.Genes as MultiSelectList, new { @class = "form-control", size = 6 })
+        </div>
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Test.Result, new { @class = "control-label" })
+            @Html.TextAreaFor(model => model.Test.Result, new { @class = "form-control", rows = 3 })
+            @Html.ValidationMessageFor(model => model.Test.Result, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Test.Interpretation, new { @class = "control-label" })
+            @Html.TextAreaFor(model => model.Test.Interpretation, new { @class = "form-control", rows = 3 })
+            @Html.ValidationMessageFor(model => model.Test.Interpretation, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+            <a asp-action="Index" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Назад к списку
+            </a>
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save"></i> Сохранить изменения
+            </button>
+        </div>
+        }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
